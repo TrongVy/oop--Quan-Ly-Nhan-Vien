@@ -22,20 +22,3 @@ danhSachNhanVien.prototype.xoaNV = function(taiKhoanNV) {
     }
 }
 
-danhSachNhanVien.prototype.timNV =function(xepLoai){
-
-     var result = this.arr.filter(function(gioLam){
-            if(gioLam <160){
-                return "nhân viên trung bình";
-             }
-             if(gioLam >160 &&gioLam <176){
-                return "nhân viên khá";
-            }
-            if(gioLam >176 &&gioLam <192){
-                return "nhân viên giỏi";
-            }
-            if(gioLam >192){
-                return "nhân viên xuất sắc";
-            }
-     })
-}
