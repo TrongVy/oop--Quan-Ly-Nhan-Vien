@@ -50,7 +50,7 @@ getLocal();
 
 // lay thong tin tu nguoi nhap
 btnThemNV.addEventListener('click',() =>{
-
+  
     var taiKhoanNV = getElm('tknv').value;
     var tenNV = getElm('name').value;
     var emailNV = getElm('email').value;
@@ -97,8 +97,10 @@ btnThemNV.addEventListener('click',() =>{
 // btnThemNV.style.display ='none';
 // btnCapNhat.style.display ='none';
 btnThem.addEventListener('click', function() {
+    getElm('form').reset();
     btnThemNV.style.display ='block';
     btnCapNhat.style.display ='none';
+  
 })
 // function edit
 function updateNV(taiKhoanNV) {
@@ -117,6 +119,7 @@ function updateNV(taiKhoanNV) {
     getElm('gioLam').value = dsnv.arr[x].gioLamTrongThang;;
     getElm('password').value = dsnv.arr[x].password;
     btnCapNhat.addEventListener('click', function() {
+       
             // console.log(dsnv.arr[x])
             var taiKhoanNV = getElm('tknv').value;
             var tenNV = getElm('name').value;
@@ -160,10 +163,11 @@ function updateNV(taiKhoanNV) {
         }        
     )
  }
+
  // function tìm nhân viên
  btnTimNV.addEventListener('click', function() {
      var newArr = [];        
-     var output =  dsnv.arr.filter(x => x.xepLoai ==getElm('searchName').value);
+     var output =  dsnv.arr.filter(x => x.xepLoai.toUpperCase() ==getElm('searchName').value.toUpperCase());
         for(var i=0;i<dsnv.arr.length;i++){
             // console.log(output[i]);      
             if(output[i]!=undefined){
